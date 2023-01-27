@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+# Activar el rewrite
+RewriteEngine on
+ErrorDocument 404 http://localhost/pet_shop/error/
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^(.*)/(.*) index.php?controlador=$1&action=$2
+</IfModule>
